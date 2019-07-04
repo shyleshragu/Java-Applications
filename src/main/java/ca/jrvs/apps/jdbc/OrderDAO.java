@@ -13,14 +13,18 @@ import java.util.List;
 
 public class OrderDAO extends DataAccessObject<Order> {
 
-    private final static String GET_BY_ID = "SELECT c.first_name, c.last_name, c.email, o.order_id," +
-            "o.creation_date, o.total_due, o.status, s.first_name, s.last_name, s.email, ol.quantity" +
-            "p.code, p.name, p.size, p.variety, p.price FROM orders o" +
-            "JOIN customer c ON o.customer_id = c.customer_id" +
-            "JOIN salesperson s ON o.salesperson_id = s.salesperson_id" +
-            "JOIN order_item ol on ol.order_id = o.order_id" +
-            "JOIN product p ON ol.product_id = p.product_id" +
-            "where o.order_id = ?";
+    private final static String GET_BY_ID = "SELECT\n" +
+            "  c.first_name, c.last_name, c.email, o.order_id,\n" +
+            "  o.creation_date, o.total_due, o.status,\n" +
+            "  s.first_name, s.last_name, s.email,\n" +
+            "  ol.quantity,\n" +
+            "  p.code, p.name, p.size, p.variety, p.price\n" +
+            "from orders o\n" +
+            "  join customer c on o.customer_id = c.customer_id\n" +
+            "  join salesperson s on o.salesperson_id=s.salesperson_id\n" +
+            "  join order_item ol on ol.order_id=o.order_id\n" +
+            "  join product p on ol.product_id = p.product_id\n" +
+            "where o.order_id = ?;";
 
     public OrderDAO(Connection connection) {
         super(connection);
