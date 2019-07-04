@@ -12,7 +12,8 @@ public class JDBCExecutor {
 
         try {
             Connection connection = dcm.getConnection();
-            CustomerDAO customerDAO = new CustomerDAO(connection);
+            //CustomerDAO customerDAO = new CustomerDAO(connection);
+            OrderDAO orderDAO = new OrderDAO(connection);
 
 
             //........create
@@ -24,13 +25,28 @@ public class JDBCExecutor {
             //........read
             //Customer customer = customerDAO.findById(1000);
             //System.out.println(customer.getFirstName() + " " + customer.getLastName());
+            Order order = orderDAO.findById(1000);
+            System.out.println(order);
 
             //........update
-            Customer customer = customerDAO.findById(10000);
-            System.out.println(customer.getFirstName()+" "+ customer.getLastName() + " " + customer.getEmail());
-            customer.setEmail("gwash@wh.gov");
-            customer = customerDAO.update(customer);
-            System.out.println(customer.getFirstName()+" "+ customer.getLastName() + " " + customer.getEmail());
+            //Customer customer = customerDAO.findById(10000);
+            //System.out.println(customer.getFirstName()+" "+ customer.getLastName() + " " + customer.getEmail());
+            //customer.setEmail("gwash@wh.gov");
+            //customer = customerDAO.update(customer);
+            //System.out.println(customer.getFirstName()+" "+ customer.getLastName() + " " + customer.getEmail());
+
+            //.........delete
+            //Customer customer = new Customer();
+            //customer.setFirstName("Delete"); customer.setLastName("Man"); customer.setEmail("deleteman@wh.com"); customer.setPhone("(123) 010-0000");
+            //customer.setState("Atlantis"); customer.setCity("Atlantis"); customer.setZipcode("000000"); customer.setAddress("fallen world");
+            //Customer dbCustomer = customerDAO.create(customer);
+            //System.out.println(dbCustomer);
+            //dbCustomer = customerDAO.findById(dbCustomer.getId());
+            //System.out.println(dbCustomer);
+            //dbCustomer.setEmail("deleddname@sea.com");
+            //dbCustomer = customerDAO.update(dbCustomer);
+            //System.out.println(dbCustomer);
+            //customerDAO.delete(dbCustomer.getId());
 
 
 
