@@ -2,8 +2,12 @@ package ca.jrvs.apps.grep;
 
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaGrepImp implements JavaGrep {
 
@@ -54,52 +58,50 @@ public class JavaGrepImp implements JavaGrep {
         List<File> files = new ArrayList<>();
 
         File f = new File(rootDir);
-        //String[] pathfiles = f.list();
 
-        for (File file : f.listFiles()) {
-            files.add(file);
-        }
 
-        return files;
+        //for (File file : f.listFiles()) {
+        //    files.add(file);
+        //}
+
+        //return files;
+
+        //Lambda implementation
+        return files = Stream.of(f.listFiles()).collect(Collectors.toList());
     }
 
-    //Lambda listFiles
-   /*@Override
-    public List<File> listFiles(String rootDir){
 
-
-    }
-    */
 
 
     @Override
-    public List<String> readLines(File inputFile) {
+    public List<String> readLines(File inputFile) throws IOException {
         List<String> lines = new ArrayList<>();
-        String storedLine;
-        BufferedReader readl;
+        //String storedLine;
+        //BufferedReader readl;
 
-        try {
-            readl = new BufferedReader(new FileReader(inputFile));
+        //try {
+        //    readl = new BufferedReader(new FileReader(inputFile));
 
-            while ((storedLine = readl.readLine()) != null) {
+        //    while ((storedLine = readl.readLine()) != null) {
 
-                lines.add(storedLine);
+          //      lines.add(storedLine);
 
 
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+            //}
+            //readl.close();
+        //} catch (IOException ex) {
+        //    ex.printStackTrace();
+        //}
 
-        return lines;
+
+        //return lines;
+
+        //Lambda implementation
+        BufferedReader readl = new BufferedReader((new FileReader(inputFile)));
+        return lines = readl.lines().collect(Collectors.toList());
     }
 
-    //Lambda readLine
-    /*@Override
-    public List<String> readLine(File inputFile){
 
-    }
-    */
 
     @Override
     public boolean containsPattern(String line) {
