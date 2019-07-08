@@ -10,10 +10,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 public class TwitterApiTest {
-    private static String CONSUMER_KEY = "yYYbgpbXuXdMDwvIVEvMLWek6";
-    private static String CONSUMER_SECRET = "uEpGdpVaWlQgtDSUmOUWtTrRL23WjWYPBubl9MXSyQY80zqiVl";
-    private static String ACCESS_TOKEN = "1144310212708524032-guBRapFAiXNWBJHdayE0XuOSAJMRUi";
-    private static String TOKEN_SECRET = "Ky89ym763XCJ05SMVIAsk9zkWSru60e7Koa2TVTXTAzlN";
+    private static String CONSUMER_KEY = System.getenv("consumerKey");
+    private static String CONSUMER_SECRET = System.getenv("consumerSecret");
+    private static String ACCESS_TOKEN = System.getenv("accessToken");
+    private static String TOKEN_SECRET = System.getenv("tokenSecret");
 
     public static void main(String[] args) throws Exception {
         //setup oauth
