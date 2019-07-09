@@ -15,7 +15,7 @@ public class CrdDao<T, ID> {
      * Find an entity by its id
      * @param id entity id   * @return
      */
-    T findById(ID id);
+    public T findById(ID id);
 
 
     /**
