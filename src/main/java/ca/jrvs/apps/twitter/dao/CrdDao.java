@@ -1,6 +1,6 @@
 package ca.jrvs.apps.twitter.dao;
 
-public class CrdDao<T, ID> {
+public interface CrdDao<T, ID> {
 
 /**
  *
@@ -15,7 +15,7 @@ public class CrdDao<T, ID> {
      * Find an entity by its id
      * @param id entity id   * @return
      */
-    public T findById(ID id);
+    T findById(ID id);
 
 
     /**
@@ -25,4 +25,4 @@ public class CrdDao<T, ID> {
      */
     T deleteById(ID id);
 }
-}
+

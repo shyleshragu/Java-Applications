@@ -1,6 +1,6 @@
 package ca.jrvs.apps.twitter.service;
 
-package ca.jrvs.apps.twitter.service;
+
 import ca.jrvs.apps.twitter.dto.Tweet; import java.util.List;
 public interface TwitterService {
 /**

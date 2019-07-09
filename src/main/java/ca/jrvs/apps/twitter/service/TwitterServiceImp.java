@@ -1,24 +1,29 @@
 package ca.jrvs.apps.twitter.service;
 
 
-import ca.jrvs.apps.twitter.Util.JsonUtil;
-import ca.jrvs.apps.twitter.Util.StringUtil;
-import ca.jrvs.apps.twitter.dao.CrdDao;
-import ca.jrvs.apps.twitter.dto.Tweet;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import static ca.jrvs.apps.twitter.Util.TweetUtil.buildTweet;
 import static ca.jrvs.apps.twitter.Util.TweetUtil.validId;
 import static ca.jrvs.apps.twitter.Util.TweetUtil.validatePostTweet;
 
-
+import ca.jrvs.apps.twitter.dao.CrdDao;
+import ca.jrvs.apps.twitter.dto.Tweet;
+import ca.jrvs.apps.twitter.Util.JsonUtil;
+import ca.jrvs.apps.twitter.Util.StringUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 public class TwitterServiceImp implements TwitterService {
 
@@ -33,10 +38,10 @@ public class TwitterServiceImp implements TwitterService {
         Tweet postTweet = buildTweet(text, longitude, latitude);
         validatePostTweet(postTweet);
 
-        try{
+        try {
             Tweet responseTweet = (Tweet) dao.create(postTweet);
             printTweet(responseTweet);
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e + "\nFailed to post tweet");
         }
 
@@ -54,13 +59,13 @@ public class TwitterServiceImp implements TwitterService {
         try {
             tweet = (Tweet) dao.findById(id);
             printTweet(selectFields(tweet, fields));
-        } catch (IOException e){
+        } catch (Exception e) {
             throw new RuntimeException("Failed to show tweet");
         }
         return tweet;
     }
 
-    private Tweet selectFields(Tweet tweet, String[] fields) {
+    protected Tweet selectFields(Tweet tweet, String[] fields) throws IOException{
         if (fields == null || fields.length == 0) {
             return tweet;
         }
@@ -102,14 +107,14 @@ public class TwitterServiceImp implements TwitterService {
         return rTweet;
     }
 
-    }
+
 
     @Override
     public List<Tweet> deleteTweets(String[] ids) {
         List<Tweet> tweets = new ArrayList<>();
-        for (String id : ids){
+        for (String id : ids) {
             validId.test(id);
-            Tweet tweet - (Tweet) dao.deleteById(id);
+            Tweet tweet =(Tweet) dao.deleteById(id);
             printTweet(tweet);
             tweets.add(tweet);
         }
@@ -117,8 +122,8 @@ public class TwitterServiceImp implements TwitterService {
     }
 
 
-    private void printTweet(Tweet tweet){
-        try{
+    private void printTweet(Tweet tweet) {
+        try {
             System.out.println(JsonUtil.toPrettyJson(tweet));
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Unable to convert tweet object to string", e);

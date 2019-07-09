@@ -1,21 +1,24 @@
 package ca.jrvs.apps.twitter;
 
+
 import ca.jrvs.apps.twitter.service.TwitterService;
 import ca.jrvs.apps.twitter.Util.StringUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
-
+@Component
 public class TwitterCLIRunner {
 
     private TwitterService service;
 
+    @Autowired
     public TwitterCLIRunner(TwitterService serive) {
         this.service = service;
     }
 
     public void run(String[] args) {
         if (args.length < 2)
-            throw new RuntimeException("Usage: TwitterCLIAPP post|show|delete|Tweet");
+            throw new RuntimeException("Usage: TwitterCLIApp post|show|delete|Tweet");
 
 
         String choice = args[0].toLowerCase();
@@ -60,7 +63,7 @@ public class TwitterCLIRunner {
 
 
         if (args.length == 3){
-            String[] fields = args[2];
+            String fields = args[2];
             if (StringUtil.isEmpty(fields))
                 throw new RuntimeException("Error: empty fields");
 

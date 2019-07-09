@@ -47,8 +47,11 @@ public class JrvsHttpHelper implements HttpHelper {
     }
 
     public HttpResponse executeHttpRequest(HttpMethod method, URI uri, StringEntity stringEntity) throws OAuthException, IOException {
-        HttpEntityEnclosingRequestBase request = () -> {
-            return method.name();
+        HttpEntityEnclosingRequestBase request = new HttpEntityEnclosingRequestBase() {
+            @Override
+            public String getMethod() {
+                return method.name();
+            }
         };
 
         request.setURI(uri);
@@ -85,7 +88,7 @@ public class JrvsHttpHelper implements HttpHelper {
     @Override
     public HttpResponse httpGet(URI uri) {
         try {
-            return executeHttpResquest(HttpMethod.get, uri. null);
+            return executeHttpRequest(HttpMethod.GET, uri, null);
         } catch (IOException e) {
             throw new RuntimeException("Failed to execute", e);
         } catch (OAuthException ex) {

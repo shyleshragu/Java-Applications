@@ -22,7 +22,7 @@ public class Tweet {
     @JsonProperty("created_at")
     private String createdAt;
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
     @JsonProperty("id_str")
     private String idStr;
     @JsonProperty("text")
@@ -30,11 +30,11 @@ public class Tweet {
     @JsonProperty("entities")
     private Entities entities;
     @JsonProperty("coordinates")
-    private Object coordinates;
+    private Coordinates coordinates;
     @JsonProperty("retweet_count")
-    private Integer retweetCount;
+    private Long retweetCount;
     @JsonProperty("favorite_count")
-    private Integer favoriteCount;
+    private Long favoriteCount;
     @JsonProperty("favorited")
     private Boolean favorited;
     @JsonProperty("retweeted")
@@ -51,12 +51,12 @@ public class Tweet {
     }
 
     @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -91,32 +91,32 @@ public class Tweet {
     }
 
     @JsonProperty("coordinates")
-    public Object getCoordinates() {
+    public Coordinates getCoordinates() {
         return coordinates;
     }
 
     @JsonProperty("coordinates")
-    public void setCoordinates(Object coordinates) {
+    public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
     @JsonProperty("retweet_count")
-    public Integer getRetweetCount() {
+    public Long getRetweetCount() {
         return retweetCount;
     }
 
     @JsonProperty("retweet_count")
-    public void setRetweetCount(Integer retweetCount) {
+    public void setRetweetCount(Long retweetCount) {
         this.retweetCount = retweetCount;
     }
 
     @JsonProperty("favorite_count")
-    public Integer getFavoriteCount() {
+    public Long getFavoriteCount() {
         return favoriteCount;
     }
 
     @JsonProperty("favorite_count")
-    public void setFavoriteCount(Integer favoriteCount) {
+    public void setFavoriteCount(Long favoriteCount) {
         this.favoriteCount = favoriteCount;
     }
 
