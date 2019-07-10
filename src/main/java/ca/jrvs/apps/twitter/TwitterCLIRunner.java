@@ -12,7 +12,7 @@ public class TwitterCLIRunner {
     private TwitterService service;
 
     @Autowired
-    public TwitterCLIRunner(TwitterService serive) {
+    public TwitterCLIRunner(TwitterService service) {
         this.service = service;
     }
 
