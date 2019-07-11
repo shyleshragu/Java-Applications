@@ -34,6 +34,7 @@ public class TwitterCLIRunner {
     }
 
     protected void postTweet(String[] args) {
+        String temp_tweet_txt;
         if (args.length != 3)
             throw new RuntimeException("Usage: TwitterCLIApp post \"tweet_text\"latitude:longitude\"");
 
@@ -50,8 +51,8 @@ public class TwitterCLIRunner {
         } catch (RuntimeException e){
             throw new RuntimeException(e);
         }
-
-        service.postTweet(tweet_txt, lat, lon);
+        temp_tweet_txt = tweet_txt+" Timestamp: "+System.currentTimeMillis();
+        service.postTweet(temp_tweet_txt, lat, lon);
     }
 
     protected void showTweet(String[] args){
