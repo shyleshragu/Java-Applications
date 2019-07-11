@@ -12,7 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 
 @Configuration
-//@PropertySource("classpath:/application.properties")
+//@PropertySource("/home/centos/dev/jrvs/bootcamp/java_apps/src/main/resources/application.properties")
 public class TwitterCLIBean {
 
     /*@Value("$(logging.level.root)")
@@ -26,6 +26,8 @@ public class TwitterCLIBean {
         ApplicationContext context = new AnnotationConfigApplicationContext(TwitterCLIBean.class);
         TwitterCLIRunner runner = context.getBean(TwitterCLIRunner.class);
         runner.run(args);
+
+        //System.out.println(loggingLevelroot + ": " + logginglevelorgspringframeworkbeansfactory);
 
     }
 

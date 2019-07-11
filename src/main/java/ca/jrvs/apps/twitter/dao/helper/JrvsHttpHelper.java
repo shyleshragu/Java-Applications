@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.net.URI;
 
-@Component
-@Profile("prod")
+//@Component
+//@Profile("prod")
 public class JrvsHttpHelper implements HttpHelper {
 
     private OAuthConsumer consume;

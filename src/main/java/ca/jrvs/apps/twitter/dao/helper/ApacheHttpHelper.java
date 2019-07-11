@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.net.URI;
 
 @SuppressWarnings("Duplicates")
-@Component
-@Profile("dev")
+//@Component
+//@Profile("dev")
 public class ApacheHttpHelper implements HttpHelper {
 
     private OAuthConsumer consume;
