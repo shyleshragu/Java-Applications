@@ -4,9 +4,11 @@ package ca.jrvs.apps.twitter;
 import ca.jrvs.apps.twitter.service.TwitterService;
 import ca.jrvs.apps.twitter.Util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 @Component
+@ComponentScan(value = {"ca.jrvs.apps.twitter"})
 public class TwitterCLIRunner {
 
     private TwitterService service;

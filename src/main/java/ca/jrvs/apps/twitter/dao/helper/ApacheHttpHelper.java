@@ -10,6 +10,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.net.URI;
 
 @SuppressWarnings("Duplicates")
 @Component
+@Profile("dev")
 public class ApacheHttpHelper implements HttpHelper {
 
     private OAuthConsumer consume;
@@ -28,7 +30,7 @@ public class ApacheHttpHelper implements HttpHelper {
     }
 
 
-    public ApacheHttpHelper() {
+    public ApacheHttpHelper() {System.out.println("dev");
         String CONSUMER_KEY = System.getenv("consumerKey");
         String CONSUMER_SECRET = System.getenv("consumerSecret");
         String ACCESS_TOKEN = System.getenv("accessToken");

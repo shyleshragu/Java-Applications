@@ -9,10 +9,14 @@ import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.client.HttpClient;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URI;
 
+@Component
+@Profile("prod")
 public class JrvsHttpHelper implements HttpHelper {
 
     private OAuthConsumer consume;
@@ -21,10 +25,11 @@ public class JrvsHttpHelper implements HttpHelper {
     public JrvsHttpHelper(OAuthConsumer consume, HttpClient httpClient) {
         this.consume = consume;
         this.httpClient = httpClient;
+
     }
 
     //default constructor
-    public JrvsHttpHelper() {
+    public JrvsHttpHelper() {System.out.println("prod");
         String CONSUMER_KEY = System.getenv("consumerKey");
         String CONSUMER_SECRET = System.getenv("consumerSecret");
         String ACCESS_TOKEN = System.getenv("accessToken");
