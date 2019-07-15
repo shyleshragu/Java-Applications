@@ -57,7 +57,7 @@ An important library that needs to be installed within Maven is the JDBC driver.
 The purpose of using the JDBC driver is to setup a connection with the PostgresSQL database.
 
 ###Enhancements and Issues
-For some reason, it keeps not working when downloaded directly from github. The issue is unknown but the problem is solved when copy pasted the same code.
+It needs to be noted that postgresSQL should be started in order for the application to work. If it is not started, then the compile returns errors and the error message points to getConnetion() command that synchronizes with the database.  
 
 ##Twitter CLI App
 ###Introduction
