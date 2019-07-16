@@ -45,6 +45,7 @@ Mockito
 JUnit
 
 Fig 1. Twitter Architecture
+
 <img src="images/twitter%20diagram1.png">
 
 When the program was runned, TwitterCLIApp which contains the main argument executes DAO. The DAO is where it sets OAuth connection using private and public keys, and POST and GET was implemented. The DAO connects to Util and DTO for support. The output from DAO was used as input when connecting to Service where the program validates the input. Then the main argument performs post, show and delete functions.    
@@ -72,6 +73,7 @@ An important library that needs to be installed within Maven is the JDBC driver.
 The purpose of using the JDBC driver is to setup a connection with the PostgreSQL database.
 
 Fig. 2: JDBC Architecture
+
 <img src="images/jdbc%20diagram.JPG">
 
 When the program was run, it enters the JDBCexecutor where the main argument is in. The main argument calls out to ApacheDataSource which sets the database connection. The main then calls Customer object which implements DataAccessObject which extends interface ApacheTransferObject. The main then calls CustomerDAO which extends the interface ApacheTransferObject of type Customer. The CustomerDAO also implements the CRUD methods thus correctly executing the application. In order to use Advanced Data Access techniques, the codes used to implement Customer and CustomerDAO are commented out and a new classes are implemented. Object Order is implemented replacing Customer, that is, it has the same function as Customer and implements DataAccessObject which extends from the interface ApacheTransferObject. The OrderDAO, similar to Order, replaces CustomerDAO  while still performing the same function. That is, it extends ApacheTransferObject of type Order and implements CRUD. Despite it being the same function, there is one primary difference. Both Order and OrderDAO call for object OrderLine.  
