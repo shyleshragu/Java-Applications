@@ -153,7 +153,7 @@ Pseudo Code:
 > writeToFile(matchedLines)
 
 Interface:
-Same as that located in src/main/java/ca/jrvs/apps/grep/JavaGrep
+Same as that located in [JavaGrep.java](https://github.com/shyleshragun/Java-Applications/blob/master/src/main/java/ca/jrvs/apps/grep/JavaGrep.java)
 
 The auto-generate function within Intellij was used to create all the methods from the interface.
 In pseudo code:
