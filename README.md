@@ -15,7 +15,7 @@ This repository contains 3 applications each unique from the other.
 
 ## Contents
 
-* [Twitter CLI App](https://github.com/shyleshragun/Java-Applications#twitter-cli-app--)
+* [Twitter CLI App](https://github.com/shyleshragun/Java-Applications#twitter-cli-app-)
 
 * [Java JDBC App](https://github.com/shyleshragun/Java-Applications#jdbc-app-)
 
