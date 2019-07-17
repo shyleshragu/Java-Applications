@@ -78,6 +78,7 @@ A few libraries that were included in maven were:
 
 **Fig. 1:** Twitter Architecture
 
+<img src="images/twitter%20diagram1.png">
 
 
 When the program was runned, TwitterCLIApp which contains the main argument executes DAO. The DAO is where it sets OAuth connection using private and public keys, and POST and GET was implemented. The DAO connects to Util and DTO for support. The output from DAO was used as input when connecting to Service where the program validates the input. Then the main argument performs post, show and delete functions.
@@ -115,6 +116,7 @@ An important library that needs to be installed within Maven is the JDBC driver.
 The purpose of using the JDBC driver is to setup a connection with the PostgreSQL database.
 
 
+<img src="images/jdbc%20diagram.JPG">
 
 **Fig. 2:** JDBC Architecture
 
