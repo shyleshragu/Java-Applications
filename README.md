@@ -100,9 +100,9 @@ An important library that needs to be installed within Maven is the JDBC driver.
 
 The purpose of using the JDBC driver is to setup a connection with the PostgreSQL database.
 
-<img src="images/jdbc%20diagram.JPG">
-
 **Fig. 2:** JDBC Architecture
+
+<img src="images/jdbc%20diagram.JPG">
 
 
 
