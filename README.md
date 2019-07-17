@@ -13,21 +13,7 @@ This repository contains 3 applications each unique from the other.
 
 
 
-## Contents
-
-* [Twitter CLI App](https://github.com/shyleshragun/Java-Applications#twitter-cli-app-)
-
-* [Java JDBC App](https://github.com/shyleshragun/Java-Applications#jdbc-app-)
-
-* [Java Grep App](https://github.com/shyleshragun/Java-Applications#java-grep-app-)
-
-
-
----
-
-
-
-## 1 Twitter CLI App <a name = "Twitter CLI App"></a>
+## 1 Twitter CLI App 
 
 ### 1.1 Introduction
 The Twitter CLI App is an application that can post, find and delete a tweet on twitter as along as the private and public keys are available.
@@ -35,6 +21,7 @@ The Twitter CLI App is an application that can post, find and delete a tweet on 
 
 
 ### 1.2 Usage
+
 The public and private keys obtained in Twitter Developer account needs to be inputted in as environment variable.
 
 Additionally, three arguments are inputted in order to use different functions of the application:
@@ -55,14 +42,13 @@ Additionally, three arguments are inputted in order to use different functions o
 
 2. >  show 123456789
 
-   Here, the application receives the command to print the tweet that was posted online at https://api.twitter.com/1.1/statuses/show.json?123456789. If the tweet does not exist with that id, then an error will occur.
+   Here, the application receives the command to print the tweet that was posted online with id=123456789. This was done by using https://api.twitter.com/1.1/statuses/show.json?123456789 which was the Twitter Api generated link to show the specified tweet. If the tweet does not exist with that id, then an error will occur.
 
 3. > delete 123456789
 
-   Here, the application receives the command to delete the tweet at https://api.twitter.com/1.1/statuses/destroy/123456789.json. If the tweet does not exist with that id, then an error will occur. If the tweet exists with that id, then the program deletes the tweet.
+   Here, the application receives the command to delete the tweet at id=123456789. This was done by using https://api.twitter.com/1.1/statuses/destroy/123456789.json which was the Twitter Api generated link to delete the specified tweet. If the tweet does not exist with that id, then an error will occur. If the tweet exists with that id, then the program deletes the tweet.
 
    
-
 ### 1.3 Design and Implementation
 A few libraries that were included in maven were:
 
@@ -84,15 +70,14 @@ A few libraries that were included in maven were:
 When the program was runned, TwitterCLIApp which contains the main argument executes DAO. The DAO is where it sets OAuth connection using private and public keys, and POST and GET was implemented. The DAO connects to Util and DTO for support. The output from DAO was used as input when connecting to Service where the program validates the input. Then the main argument performs post, show and delete functions.
 
 ​    
-
 ### 1.4 Enhancements and Issues
-The same tweet could not be tweeted at different times. In order to avoid this issue, each tweet is posted with the inclusion of the posted times timestamp. This way, the tweet is different each time it is posted. An improvement would be to make the program tweet the same tweet without needing to add additional information or text other than location.
+The same tweet could not be tweeted at different times. In order to avoid this issue, each tweet is posted with the inclusion of the current timestamp. This way, the tweet is different each time it is posted. An improvement would be to make the program tweet the same tweet without needing to add additional information or text.
 
 ---
 
 
 
-## 2 Java JDBC App <a name = "JDBC App"></a>
+## 2 Java JDBC App 
 
 ### 2.1 Introduction
 Java Database Connectivity (JDBC) application is an API which defines how a client may access a database. The JDBC connections support creation, deletion and execution statements like SQL's CREATE, INSERT, UPDATE, DELETE. This application was made with the primary focus of supporting Create, Read, Update, and Delete (CRUD).
@@ -115,7 +100,6 @@ An important library that needs to be installed within Maven is the JDBC driver.
 
 The purpose of using the JDBC driver is to setup a connection with the PostgreSQL database.
 
-
 <img src="images/jdbc%20diagram.JPG">
 
 **Fig. 2:** JDBC Architecture
@@ -127,13 +111,13 @@ When the program was run, it enters the JDBCexecutor where the main argument is 
   
 
 ### 2.4 Enhancements and Issues
-It needs to be noted that postgreSQL should be started in order for the application to work. If it is not started, then the compile returns errors and the error message points to getConnetion() command that synchronizes with the database.  
+It needs to be noted that postgreSQL should be started in order for the application to work. If it is not started, then the compile returns errors and the error message points to *getConnetion()* command that synchronizes with the database.  
 
 ---
 
 
 
-## 3 Java Grep App <a name = "Java Grep App"></a>
+## 3 Java Grep App 
 
 ### 3.1 Introduction
 The java grep app searches for  a text pattern within a directory and output the lines with matched text into a file name *grep.out*.
@@ -181,3 +165,4 @@ The first for loop starts from the first file in the directory to the last file 
 Functionally speaking, the application runs perfectly.
 An issue that was noted was that the output file was not completely labeled. That is, the lines that were written into the file could not be determined from which file it came from, thus anyone analyzing the contents will find it difficult to find the origin of the line.
 A solution would be to create a new paragraph while application enters a new file. It should also be possible to write the origin file name of the line before the paragraph. 
+
