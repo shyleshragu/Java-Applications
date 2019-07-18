@@ -11,6 +11,23 @@ This repository contains 3 applications each unique from the other.
 
 ---
 
+- [1 Twitter CLI App](#1-twitter-cli-app)
+  * [1.1 Introduction](#11-introduction)
+  * [1.2 Usage](#12-usage)
+  * [1.3 Design and Implementation](#13-design-and-implementation)
+  * [1.4 Enhancements and Issues](#14-enhancements-and-issues)
+- [2 Java JDBC App](#2-java-jdbc-app)
+  * [2.1 Introduction](#21-introduction)
+  * [2.2 Usage](#22-usage)
+  * [2.3 Design and Implementation](#23-design-and-implementation)
+  * [2.4 Enhancements and Issues](#24-enhancements-and-issues)
+- [3 Java Grep App](#3-java-grep-app)
+  * [3.1 Introduction](#31-introduction)
+  * [3.2 Usage](#32-usage)
+  * [3.3 Design and Implementation](#33-design-and-implementation)
+  * [3.4 Enhancements and Issues](#34-enhancements-and-issues)
+
+---
 
 
 ## 1 Twitter CLI App 
