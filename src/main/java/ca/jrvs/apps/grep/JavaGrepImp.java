@@ -59,13 +59,6 @@ public class JavaGrepImp implements JavaGrep {
 
         File f = new File(rootDir);
 
-
-        //for (File file : f.listFiles()) {
-        //    files.add(file);
-        //}
-
-        //return files;
-
         //Lambda implementation
         return files = Stream.of(f.listFiles()).collect(Collectors.toList());
     }
@@ -76,25 +69,6 @@ public class JavaGrepImp implements JavaGrep {
     @Override
     public List<String> readLines(File inputFile) throws IOException {
         List<String> lines = new ArrayList<>();
-        //String storedLine;
-        //BufferedReader readl;
-
-        //try {
-        //    readl = new BufferedReader(new FileReader(inputFile));
-
-        //    while ((storedLine = readl.readLine()) != null) {
-
-          //      lines.add(storedLine);
-
-
-            //}
-            //readl.close();
-        //} catch (IOException ex) {
-        //    ex.printStackTrace();
-        //}
-
-
-        //return lines;
 
         //Lambda implementation
         BufferedReader readl = new BufferedReader((new FileReader(inputFile)));
