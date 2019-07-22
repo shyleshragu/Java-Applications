@@ -2,7 +2,7 @@ out
 input_files
 jdbc_sql
 target
-.idea/
+/.idea
 .gitignore.*
 output_files
 compiler.xml
