@@ -5,8 +5,8 @@ target
 .idea/
 .gitignore.*
 output_files
-.idea/compiler.xml
-.idea/encodings.xml
-.idea/misc.xml
-.idea/vcs.xml
-.idea/workspace.xml
+compiler.xml
+encodings.xml
+misc.xml
+vcs.xml
+workspace.xml
